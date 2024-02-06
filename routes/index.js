@@ -3,14 +3,23 @@ var router = express.Router();
 // const userModel = require("./users");
 
 router.get("/", function (req, res) {
-  req.session.khatam = "hello";
+  res.cookie("age", 25);
   res.render("index");
 });
 
-router.get("/session", function (req, res) {
-  console.log(req.session);
-  res.send("Check your session");
+router.get("/read", function (req, res) {
+  console.log(req.cookies);
+  res.send("check");
 });
+// router.get("/", function (req, res) {
+//   req.session.khatam = "hello";
+//   res.render("index");
+// });
+
+// router.get("/session", function (req, res) {
+//   console.log(req.session);
+//   res.send("Check your session");
+// });
 
 // router.get("/create", async function (req, res, next) {
 //   const createdUser = await userModel.create({
