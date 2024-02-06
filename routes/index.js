@@ -2,6 +2,11 @@ var express = require("express");
 var router = express.Router();
 const userModel = require("./users");
 
+router.get("/", function (req, res) {
+  req.session.khatam = "hello";
+  res.render("index");
+});
+
 // router.get("/create", async function (req, res, next) {
 //   const createdUser = await userModel.create({
 //     username: "Sajid",
@@ -16,9 +21,9 @@ const userModel = require("./users");
 //   res.send(findUser);
 // });
 
-router.get("/delete", async function (req, res, next) {
-  const deleteUser = await userModel.findOneAndDelete();
-  res.send(deleteUser);
-});
+// router.get("/delete", async function (req, res, next) {
+//   const deleteUser = await userModel.findOneAndDelete();
+//   res.send(deleteUser);
+// });
 
 module.exports = router;
