@@ -8,9 +8,15 @@ router.get("/", function (req, res) {
 });
 
 router.get("/read", function (req, res) {
-  console.log(req.cookies);
+  console.log(req.cookies.age);
   res.send("check");
 });
+
+router.get("/delete", function (req, res) {
+  res.clearCookie("age");
+  res.send("cleared");
+});
+
 // router.get("/", function (req, res) {
 //   req.session.khatam = "hello";
 //   res.render("index");
