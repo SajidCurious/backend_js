@@ -1,10 +1,15 @@
 var express = require("express");
 var router = express.Router();
-const userModel = require("./users");
+// const userModel = require("./users");
 
 router.get("/", function (req, res) {
   req.session.khatam = "hello";
   res.render("index");
+});
+
+router.get("/session", function (req, res) {
+  console.log(req.session);
+  res.send("Check your session");
 });
 
 // router.get("/create", async function (req, res, next) {
