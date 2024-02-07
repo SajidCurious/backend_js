@@ -9,6 +9,27 @@ router.get("/create", async function (req, res) {
     description: "I love Web Development",
     categories: ["js", "React", "Tailwind", "Next"],
   });
+  res.send(userData);
+});
+
+router.get("/create1", async function (req, res) {
+  let userData = await userModel.create({
+    username: "Wajid",
+    nickname: "Wajju",
+    description: "I love Mobile Development",
+    categories: ["Ireland", "UK", "Australia", "Next"],
+  });
+  res.send(userData);
+});
+
+router.get("/create2", async function (req, res) {
+  let userData = await userModel.create({
+    username: "Arbaz",
+    nickname: "Abbu",
+    description: "I love Eating Development",
+    categories: ["Australia", "Canada", "Russia", "Next"],
+  });
+  res.send(userData);
 });
 
 // router.get("/flash", function (req, res) {
