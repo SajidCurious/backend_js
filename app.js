@@ -3,7 +3,8 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var session = require("express-session");
+const session = require("express-session");
+const flash = require("connect-flash");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -21,6 +22,8 @@ app.use(
     secret: "lalalalala",
   })
 );
+
+app.use(flash());
 
 app.use(logger("dev"));
 app.use(express.json());

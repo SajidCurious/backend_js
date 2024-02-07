@@ -3,19 +3,23 @@ var router = express.Router();
 // const userModel = require("./users");
 
 router.get("/", function (req, res) {
-  res.cookie("age", 25);
   res.render("index");
 });
 
-router.get("/read", function (req, res) {
-  console.log(req.cookies.age);
-  res.send("check");
-});
+// router.get("/", function (req, res) {
+//   res.cookie("age", 25);
+//   res.render("index");
+// });
 
-router.get("/delete", function (req, res) {
-  res.clearCookie("age");
-  res.send("cleared");
-});
+// router.get("/read", function (req, res) {
+//   console.log(req.cookies.age);
+//   res.send("check");
+// });
+
+// router.get("/delete", function (req, res) {
+//   res.clearCookie("age");
+//   res.send("cleared");
+// });
 
 // router.get("/", function (req, res) {
 //   req.session.khatam = "hello";
