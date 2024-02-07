@@ -1,10 +1,25 @@
 var express = require("express");
 var router = express.Router();
-// const userModel = require("./users");
+const userModel = require("./users");
 
-router.get("/", function (req, res) {
-  res.render("index");
+router.get("/create", async function (req, res) {
+  let userData = await userModel.create({
+    username: "Sajid",
+    nickname: "Sajju",
+    description: "I love Web Development",
+    categories: ["js", "React", "Tailwind", "Next"],
+  });
 });
+
+// router.get("/flash", function (req, res) {
+//   req.flash("age", 24);
+//   res.send("bangaya");
+// });
+
+// router.get("/check", function (req, res) {
+//   console.log(req.flash("age"));
+//   res.send("check terminal");
+// });
 
 // router.get("/", function (req, res) {
 //   res.cookie("age", 25);
